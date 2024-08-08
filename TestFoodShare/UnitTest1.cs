@@ -9,13 +9,13 @@ namespace TestFoodShare
 
 
         IWebDriver driver;
-        WebDriverWait wait;
+      //  WebDriverWait wait;
         [SetUp]
         public void Setup()
 
         {
             driver = new ChromeDriver();
-            wait =  new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+          //  wait =  new WebDriverWait(driver, TimeSpan.FromSeconds(10));
 
             //navigate the HOME PAGE
 
@@ -31,8 +31,8 @@ namespace TestFoodShare
         }
 
         //TEST LOGIN FOR ADMIN
-        /*
-        [Test]
+        
+       /* [Test]
            public void TestAdmin()
            {
                //LOGIN PAGE
@@ -61,7 +61,7 @@ namespace TestFoodShare
                  submitButton.Submit();
 
 
-      /*     }
+          }/*
 
 
      /*  [TearDown]
@@ -71,9 +71,9 @@ namespace TestFoodShare
          }
 
         
-
+        */
          //TESTING DASHBOARD
-        [Test]    
+       /* [Test]    
 
 
 
@@ -100,8 +100,8 @@ namespace TestFoodShare
              recipientAccount.Click();
               
               //REMOVE RECIPIENT ACCOUNT
-              IWebElement removeRecipient = driver.FindElement(By.XPath("//button[contains(@class, 'btn btn-outline-danger btn-sm')]"));
-            removeRecipient.Click();
+            //  IWebElement removeRecipient = driver.FindElement(By.XPath("//button[contains(@class, 'btn btn-outline-danger btn-sm')]"));
+            //removeRecipient.Click();
 
 
 
@@ -116,17 +116,17 @@ namespace TestFoodShare
              recipientHistory.Click();
 
             //NO BACKEN YET
-            driver.Navigate().GoToUrl("http://localhost:3000/adminDash/profile");
-             IWebElement profile = driver.FindElement(By.LinkText("#"));
-             profile.Click();
+           // driver.Navigate().GoToUrl("http://localhost:3000/adminDash/profile");
+            // IWebElement profile = driver.FindElement(By.LinkText("#"));
+             //profile.Click();
 
            //CLICK LOGOUT BUTTOM
-            IWebElement logout = driver.FindElement(By.CssSelector("a.text-white  nav-link"));
-            logout.Click();
+          //  IWebElement logout = driver.FindElement(By.CssSelector("a.text-white  nav-link"));
+           // logout.Click();
 
 
            }
-        */
+        
         // TEST SIGNUP RECIPIENT
        /* [Test]
 
@@ -253,26 +253,61 @@ namespace TestFoodShare
 
         public void TestDonorSignUp()
         {
-            // navigate the page
-         IWebElement dropdownB = driver.FindElement(By.XPath("//button[@type='button']"));
-           dropdownB.Click();
-
-            //SIGNUP PAGE
-            driver.Navigate().GoToUrl("http://localhost:3000/signup");
-            IWebElement selectDonor = driver.FindElement(By.XPath("//a[@href='/signup']"));
-            selectDonor.Click();
-
-          // driver.Navigate().GoToUrl("http://localhost:3000/recepientsignup");
-            IWebElement SignUp = driver.FindElement(By.XPath("//button[@type='button']"));
-            SignUp.Click();
-
+         
+            //CLICK SIGNUP BUTTON
           
-            IWebElement dropdownButton = driver.FindElement(By.XPath("//button[contains(@class,'dropdown-toggle')]"));
-            dropdownButton.Click();
+            IWebElement dropdownB = driver.FindElement(By.XPath("//button[contains(@class,'dropdown-toggle btn btn-outline-success')]"));
+            dropdownB.Click();
 
-            // driver.Navigate().GoToUrl("");
+           //SELECT DONOR
+               IWebElement selectDonor = driver.FindElement(By.XPath("//a[@href='/signup']"));
+               selectDonor.Click();
+
+
+            //NAVIGATE DONOR PAGE 
+            driver.Navigate().GoToUrl("http://localhost:3000/signup");
+
+
+            //DONOR NAME
+            IWebElement donorName = driver.FindElement(By.XPath("//input[@type='text']"));
+            donorName.SendKeys("Forgive");
+
+            //EMAIL ADDDRESS
+            IWebElement donorEmail = driver.FindElement(By.XPath("//input[@type='email']"));
+            donorEmail.SendKeys("makematlhaga@gmail.com");
+
+            //TELPHONE
+            IWebElement telphone = driver.FindElement(By.XPath("//input[@type='tel']"));
+            telphone.SendKeys("0764399943");
+
+            //PHYSICAL ADDRESS
+            IWebElement physicalAddress = driver.FindElement(By.XPath("//input[@type='text1']"));
+            physicalAddress.SendKeys("Tshwane");
+
+            //PASSWORD
+            IWebElement password = driver.FindElement(By.XPath("//input[@type='password']"));
+            password.SendKeys("Makematlhaga@2024");
+
+            //CONFIRM PASSWORD
+           IWebElement confirmPassword = driver.FindElement(By.XPath("//input[@placeholder='Confirm password']"));
+            confirmPassword.SendKeys("Makematlhaga@2024");
+
+            //SUBMIT BUTTON
+            IWebElement signUp = driver.FindElement(By.XPath("//button[contains(@class, 'btn btn-dark')]"));
+            signUp.Click();
         }
 
+        [Test]
+
+        public void TestDonorLogin()
+        {
+            //NAVIGATE LOGIN PAGE
+            driver.Navigate().GoToUrl("http://localhost:3000/login");
+
+
+
+
+        }
 
     }
 }
