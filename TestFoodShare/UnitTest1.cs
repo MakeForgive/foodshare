@@ -352,5 +352,55 @@ namespace TestFoodShare
         }
 
 
+        [Test]
+        public void TestDonate() 
+        {
+            //NAVIGATE RECIPIENT HOME PAGE
+            driver.Navigate().GoToUrl("http://localhost:3000/home");
+
+            //CLICK DONATE BUTTON
+            IWebElement donate = driver.FindElement(By.XPath("//a[@href='/foodform']"));
+            donate.Click();
+
+            //NAVIGATE DONATION PAGE
+            driver.Navigate().GoToUrl("http://localhost:3000/foodform");
+
+            //ENTER FOOD TYPE
+            IWebElement foodtype = driver.FindElement(By.Id("foodType"));
+            foodtype.SendKeys("fish(hake)");
+
+            //ENTER QUANTITY
+            IWebElement quantity = driver.FindElement(By.Id("quantity"));
+            quantity.SendKeys("8");
+
+            //ENTER DESCRIPTION
+            IWebElement description = driver.FindElement(By.Id("description"));
+            description.SendKeys("eggs,salt,6 gun-spice");
+
+            //ENTER TIME COOKED
+            IWebElement timeCooked = driver.FindElement(By.XPath("//input[@placeholder='Enter time cooked']"));
+            timeCooked.SendKeys("12 august 2024  07:00");
+
+            //ENTER PHYSICAL ADDRESS
+            IWebElement physicalAdress = driver.FindElement(By.XPath("//input[@placeholder='Enter your address']"));
+            physicalAdress.SendKeys("south campus main gate");
+
+            //CONTACT INFO OR EMAIL ADDRESS
+            IWebElement emailAddress = driver.FindElement(By.XPath("//input[@placeholder='Enter your contact information']"));
+            emailAddress.SendKeys("makematlhaga@gmail.com");
+
+            //CLICK TERMS AND CONDITIONS
+            IWebElement checkbox = driver.FindElement(By.XPath("//input[@type='checkbox']"));
+            checkbox.Click();
+
+            //CLICK ADD ITEM    
+            IWebElement addItem = driver.FindElement(By.XPath("//button[contains(@class, 'mt-3 btn-block btn-lg btn btn-dark')]"));
+            addItem.Click();
+
+        }
+
+
+
+
     }
 }
