@@ -3,6 +3,7 @@ using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.Support.UI;
 using System.Runtime.Serialization;
 
+
 namespace TestFoodShare
 {
     public class Tests
@@ -16,7 +17,8 @@ namespace TestFoodShare
 
         {
             driver = new ChromeDriver();
-          //  wait =  new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+            //  wait =  new WebDriverWait(driver, TimeSpan.FromSeconds(10));
+          
 
             //navigate the HOME PAGE
 
@@ -301,122 +303,100 @@ namespace TestFoodShare
 
 
             //SUBMIT BUTTON 
-            IWebElement submitButton = driver.FindElement(By.XPath("//button[@type='submit']"));
-            submitButton.Click();
-
-            //DONOR DASHBOARD
-            //NAVIGATE HOME PAGE FOR DASHBOARD
-            driver.Navigate().GoToUrl("http://localhost:3000/home");
-
-            //CLICK DASHBOARD
-            IWebElement dashboard = driver.FindElement(By.XPath("//a[@href='/Donordashboard']"));
-            dashboard.Click();
-
-            //NAVIGATE DASHBOAR PAGE 
-
-            driver.Navigate().GoToUrl("http://localhost:3000/Donordashboard");
-            //ERROR SAME MANES 
-
-            //CLICK USER PROFILE
-            IWebElement userProfile = driver.FindElement(By.XPath(""));
-            userProfile.Click();
-
-            //CLICK DONATION HISTORY
-            IWebElement donationHistory = driver.FindElement(By.XPath(""));
-            donationHistory.Click();
-
-            //CLICK PENDING REQUEST
-            IWebElement pendingRequest = driver.FindElement(By.XPath(""));
-            pendingRequest.Click();
-
-            //CLICK FEEDBACK
-            IWebElement feedback = driver.FindElement(By.XPath(""));
-            feedback.Click();
-
-            //CLICK PROFILE SETTING 
-            IWebElement profileSetting = driver.FindElement(By.XPath(""));
-            profileSetting.Click();
+           
 
 
-           /* //DASHBOARD
-            //NAVIGATE HOME PAGE FOR DASHBOARD
-            driver.Navigate().GoToUrl("http://localhost:3000/home");
+            
+            
+                        //DASHBOARD
+                        //NAVIGATE HOME PAGE FOR DASHBOARD
+                        driver.Navigate().GoToUrl("http://localhost:3000/home");
 
-            //CLICK DONATE BUTTON
-            IWebElement donate = driver.FindElement(By.XPath("//a[@href='/foodform']"));
-            donate.Click();
+                        //CLICK DONATE BUTTON
+                        IWebElement donate = driver.FindElement(By.XPath("//a[@href='/foodform']"));
+                        donate.Click();
 
-           /* //NAVIGATE DONATION PAGE
-            driver.Navigate().GoToUrl("http://localhost:3000/foodform");
+                       //NAVIGATE DONATION PAGE
+                        driver.Navigate().GoToUrl("http://localhost:3000/foodform");
 
-            //ENTER FOOD TYPE
-            IWebElement foodtype = driver.FindElement(By.Id("foodType"));
-            foodtype.SendKeys("fish");
+                        //ENTER FOOD TYPE
+                        IWebElement foodtype = driver.FindElement(By.Id("foodType"));
+                        foodtype.SendKeys("fish");
 
-            //ENTER QUANTITY
-            IWebElement quantity = driver.FindElement(By.Id("quantity"));
-            quantity.SendKeys("8");
+                        //ENTER QUANTITY
+                        IWebElement quantity = driver.FindElement(By.Id("quantity"));
+                        quantity.SendKeys("8");
 
-            //ENTER DESCRIPTION
-            IWebElement description = driver.FindElement(By.Id("description"));
-            description.SendKeys("eggs,salt,6 gun-spice");
+                        //ENTER DESCRIPTION
+                        IWebElement description = driver.FindElement(By.Id("description"));
+                        description.SendKeys("eggs,salt,6 gun-spice");
 
-            //ENTER TIME COOKED
-            IWebElement timeCooked = driver.FindElement(By.XPath("//input[@placeholder='Enter time cooked']"));
-            timeCooked.SendKeys("12-08-2024 09:00");
+                        //ENTER TIME COOKED
+                        IWebElement timeCooked = driver.FindElement(By.XPath("//input[@placeholder='Enter time cooked']"));
+                        timeCooked.SendKeys("13-08-2024 09:00");
 
-            //ENTER PHYSICAL ADDRESS
-            IWebElement physicalAdress = driver.FindElement(By.XPath("//input[@placeholder='Enter your address']"));
-            physicalAdress.SendKeys("south campus main gate");
+                        //ENTER PHYSICAL ADDRESS
+                        IWebElement physicalAdress = driver.FindElement(By.XPath("//input[@placeholder='Enter your address']"));
+                        physicalAdress.SendKeys("south campus main gate");
 
-            //CONTACT INFO OR EMAIL ADDRESS
-            IWebElement emailAddress = driver.FindElement(By.XPath("//input[@placeholder='Enter your email address']"));
-            emailAddress.SendKeys("makematlhaga@gmail.com");
+                        //CONTACT INFO OR EMAIL ADDRESS
+                        IWebElement emailAddress = driver.FindElement(By.XPath("//input[@placeholder='Enter your email address']"));
+                        emailAddress.SendKeys("makematlhaga@gmail.com");
 
-            //CLICK TERMS AND CONDITIONS
-            IWebElement checkbox = driver.FindElement(By.XPath("//input[@type='checkbox']"));
-            checkbox.Click();
+                        //CLICK TERMS AND CONDITIONS
+                        IWebElement checkbox = driver.FindElement(By.XPath("//input[@type='checkbox']"));
+                        checkbox.Click();
 
-            //CLICK ADD ITEM    
-          //  IWebElement addItem = driver.FindElement(By.XPath("//button[contains(@class, 'mt-3 btn-block btn-lg btn btn-dark')]"));
-          //  addItem.Click();*/
+                        //CLICK ADD ITEM    
+                        IWebElement addItem = driver.FindElement(By.XPath("//button[contains(@class, 'mt-3 btn-block btn-lg btn btn-dark')]"));
+                       addItem.Click();
         }
+
+        [Test]
+        public void TestDonor() {
+
+            IWebElement donate = driver.FindElement(By.ClassName("//a[@href='/foodform']"));
+            donate.Click();
+        }
+
         [Test]
 
-        public void TestDonorDashboard()
+        public void TestDonorContact()
 
         {
-            //NAVIGATE HOME PAGE FOR DASHBOARD
+           /* //NAVIGATE HOME PAGE FOR DASHBOARD
             driver.Navigate().GoToUrl("http://localhost:3000/home");
 
             //CLICK DASHBOARD
-            IWebElement dashboard = driver.FindElement(By.XPath("//a[@href='/Donordashboard']"));
-           dashboard.Click();
+            IWebElement contact = driver.FindElement(By.XPath("//a[@href='/contact']"));
+           contact.Click();
 
             //NAVIGATE DASHBOAR PAGE 
 
-            driver.Navigate().GoToUrl("http://localhost:3000/Donordashboard");
-            //ERROR SAME MANES 
+            /*  driver.Navigate().GoToUrl("http://localhost:3000/Donordashboard");
+              //ERROR SAME MANES 
 
-            //CLICK USER PROFILE
-            IWebElement userProfile = driver.FindElement(By.XPath(""));
-            userProfile.Click();
+              //CLICK USER PROFILE
+              IWebElement userProfile = driver.FindElement(By.XPath(""));
+              userProfile.Click();
 
-            //CLICK DONATION HISTORY
-            IWebElement donationHistory = driver.FindElement(By.XPath(""));
-            donationHistory.Click();
+              //CLICK DONATION HISTORY
+              IWebElement donationHistory = driver.FindElement(By.XPath(""));
+              donationHistory.Click();
 
-            //CLICK PENDING REQUEST
-            IWebElement pendingRequest = driver.FindElement(By.XPath(""));
-            pendingRequest.Click();
+              //CLICK PENDING REQUEST
+              IWebElement pendingRequest = driver.FindElement(By.XPath(""));
+              pendingRequest.Click();
 
-            //CLICK FEEDBACK
-            IWebElement feedback = driver.FindElement(By.XPath(""));
-            feedback.Click();
+              //CLICK FEEDBACK
+              IWebElement feedback = driver.FindElement(By.XPath(""));
+              feedback.Click();
 
-            //CLICK PROFILE SETTING 
-            IWebElement profileSetting = driver.FindElement(By.XPath(""));
-            profileSetting.Click();
+              //CLICK PROFILE SETTING 
+              IWebElement profileSetting = driver.FindElement(By.XPath(""));
+              profileSetting.Click();*/
+
+            
         }
 
 
@@ -469,10 +449,42 @@ namespace TestFoodShare
         }
 
         [Test]
-        public void TestContact()
-        { 
-        //NAVIGATE 
-        
+        public void TestDonorLoginAndDashboard2()
+        {
+            // NAVIGATE TO LOGIN PAGE
+            driver.Navigate().GoToUrl("http://localhost:3000/login");
+
+            // WAIT UNTIL DONOR OPTION IS VISIBLE AND CLICK
+            WebDriverWait wait = new WebDriverWait(driver, TimeSpan.FromSeconds(20));
+
+            IWebElement donor = driver.FindElement(By.XPath("//input[@value='Donor']"));
+            donor.Click();
+
+            // WAIT UNTIL EMAIL FIELD IS VISIBLE AND ENTER EMAIL
+            IWebElement email = driver.FindElement(By.XPath("//input[@type='email']"));
+            email.SendKeys("makematlhaga@gmail.com");
+
+            // WAIT UNTIL PASSWORD FIELD IS VISIBLE AND ENTER PASSWORD
+            IWebElement password = driver.FindElement(By.XPath("//input[@type='password']"));
+            password.SendKeys("Makematlhaga@2024");
+
+            // OPTIONAL: CLICK SHOW PASSWORD BUTTON IF NEEDED
+            IWebElement showButton = driver.FindElement(By.XPath("//button[contains(@class, 'btn btn-outline-secondary')]"));
+            showButton.Click();
+
+            // WAIT UNTIL SUBMIT BUTTON IS VISIBLE AND CLICK TO LOGIN
+            IWebElement submitButton = driver.FindElement(By.XPath("//button[@type='submit']"));
+            submitButton.Click();
+
+            // WAIT UNTIL HOME PAGE IS LOADED
+            wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.UrlContains("/home"));
+
+            // NAVIGATE TO HOME PAGE FOR DASHBOARD
+            driver.Navigate().GoToUrl("http://localhost:3000/home");
+
+            // WAIT UNTIL DONATE BUTTON IS VISIBLE AND CLICK
+            IWebElement donate = wait.Until(SeleniumExtras.WaitHelpers.ExpectedConditions.ElementToBeClickable(By.XPath("//a[@href='/foodform']")));
+            donate.Click();
         }
 
 

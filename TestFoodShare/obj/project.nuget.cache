@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "YsLSPI7gHAocTlC2X5fxjQBXw74iSM6LefRUZGQb04SXFXoC8/WPUM5EXJ1R/FVusjXt/phgvXl7fEnDkdkT0A==",
+  "dgSpecHash": "ofKNuAWwHC3Of77xaT9oOzEqMHrWHKdQ+lxYVg7cX6yAa+WQdMks9HENaNdpL5Ue5rks0emyJu6/trMc2qEukQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\220505170\\Desktop\\foodshare\\TestFoodShare\\TestFoodShare.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\220505170\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
+    "C:\\Users\\220505170\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\220505170\\.nuget\\packages\\microsoft.codecoverage\\17.8.0\\microsoft.codecoverage.17.8.0.nupkg.sha512",
     "C:\\Users\\220505170\\.nuget\\packages\\microsoft.net.test.sdk\\17.8.0\\microsoft.net.test.sdk.17.8.0.nupkg.sha512",
     "C:\\Users\\220505170\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
